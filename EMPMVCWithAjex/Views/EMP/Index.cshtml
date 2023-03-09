@@ -1,0 +1,84 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+
+<h1>Index</h1>
+
+<button class="btn btn-sm btn-primary m-2" id="btnAddEmployee">AddEmployee</button>
+<br />
+
+<table class="table table-bordered">
+    <thead>
+        <tr class="text-center">
+            <th>id</th>
+            <th>EmpName</th>
+            <th>Gender</th>
+            <th>Department</th>
+            <th>Salary</th>
+            <th>StartDate</th>
+            <th>Note</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody class="text-center" id="table-data"></tbody>
+</table>
+
+<br />
+@*Design tEmployee*@
+<div class="model fade modal" id="EmpMadal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="text-info modal-title" id="Heading">AddEmployee</h1>
+                <button class="close text-danger" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                @*Form model*@
+                <form method="post">
+                    <div class="form-group" id="empid">
+                        <label>id</label>
+                        <input class="form-control" id="id" disabled="disabled" />
+                    </div>
+                    <div class="form-group">
+                        <label>EmpName</label>
+                        <input type="text" placeholder="Enter your Name" class="form-control" id="EmpName" />
+                    </div>
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <input type="text" placeholder="Ente Gender" class="form-control" id="Gender" />
+                    </div>
+                    <div class="form-group">
+                        <label>Department</label>
+                        <input type="text" placeholder="Enter Department" class="form-control" id="Department" />
+                    </div>
+                    <div class="form-group">
+                        <label>Salary</label>
+                        <input type="text" placeholder="Enter Salary" class="form-control" id="Salary" />
+                    </div>
+                    <div class="form-group">
+                        <label>StartDate</label>
+                        <input type="date" placeholder="Enter StartDate" class="form-control" id="StartDate" />
+                    </div>
+                    <div class="form-group">
+                        <label>Note</label>
+                        <input type="text" placeholder="Note" class="form-control" id="Note" />
+                    </div>
+                </form>
+            </div>
+            @* Footer*@
+            <div class="modal-footer">
+                <button class="btn btn-primary" onclick="AddEmployee();" id="btnAddEmployee">Save</button>
+                <button class="btn btn-warning" onclick="Updateemp()" style="display:none" id="btnUpdateemp">Update</button>
+                <button class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/js/CustomJs.js"></script>
+<link href="~/cscustom.css" rel="stylesheet" />
